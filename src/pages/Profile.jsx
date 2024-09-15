@@ -20,7 +20,7 @@ function Dashboard() {
           </Link>
         </div>
 
-        <div className="flex flex-wrap gap-5 justify-center max-w-6xl w-full my-4">
+        <div className="flex flex-wrap gap-5 justify-center w-full my-4">
             {allowedPost && allowedPost.length>0 ? (allowedPost.map((post,index) => (
                 <Link  key={index} to={`/post/${post.id}`}>
                     <div className="flex flex-col justify-between w-64 hover:scale-105 ease-in-out duration-100 border rounded-md shadow-[0_3px_10px_rgb(0,0,0,0.2)]">
