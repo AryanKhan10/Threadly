@@ -21,20 +21,28 @@ export const postSlice = createSlice({
             try {
             localStorage.setItem('posts', JSON.stringify(state.posts));
             } catch (error) {
-                alert("Stoage full, ",error)
+                alert("Confirm ",error)
             }
         },
         deletePost:(state,action)=>{
 
             state.posts=state.posts.filter(post=>post.id!==action.payload)
-            localStorage.setItem('posts', JSON.stringify(state.posts));
+            try {
+                localStorage.setItem('posts', JSON.stringify(state.posts));
+                } catch (error) {
+                    alert("Confirm ",error)
+                }
         },
         updatePost: (state, action) => {
             const index = state.posts.findIndex(post => post.id === action.payload.id);
 
             if (index !== -1) {
               state.posts[index] = action.payload;
-              localStorage.setItem('posts', JSON.stringify(state.posts));
+              try {
+                localStorage.setItem('posts', JSON.stringify(state.posts));
+                } catch (error) {
+                    alert("Confirm ",error)
+                }
             }
         }
     }
