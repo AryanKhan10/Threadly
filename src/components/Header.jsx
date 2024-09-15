@@ -28,7 +28,7 @@ function Header() {
           <div className={` w-9 h-10 cursor-pointer flex flex-col ${isOpen?"":"gap-1"} items-center justify-center`}>
             <div
               className={`font-bold text-xl w-[90%] h-[4px] bg-black rounded-sm transition-all duration-300 origin-left ${
-                isOpen ? "rotate-[-45deg] translate-y-[0.45rem]" : "translate-y-0"
+                isOpen ? "rotate-[-45deg] translate-y-[1.1rem]" : "translate-y-0"
               }`}
             ></div>
             <div
@@ -38,7 +38,7 @@ function Header() {
             ></div>
             <div
               className={`w-[90%] h-[4px] bg-black rounded-md transition-all duration-300 origin-left ${
-                isOpen ? "rotate-[45deg] -translate-y-[0.45rem]" : ""
+                isOpen ? "rotate-[45deg] -translate-y-[0.6rem]" : ""
               }`}
             ></div>
           </div>
