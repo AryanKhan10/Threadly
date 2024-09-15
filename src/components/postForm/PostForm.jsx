@@ -20,14 +20,16 @@ function PostForm() {
   console.log(toBeUpdate);
 
   const users = useSelector((state) => state.auth.users);
-  const {id} = users.find((user)=>user.isAuthenticated === true);
-
+  const {id,userName} = users.find((user)=>user.isAuthenticated === true);
+  console.log(userName)
   const userId=id
   console.log(userId)
   console.log(posts);
   console.log(toBeUpdate);
   const [previewUrl, setPreviewUrl] = useState(null);
+
   const [postData, setPostData] = useState({
+    username:toBeUpdate ? toBeUpdate.username : "",
     uId:toBeUpdate?toBeUpdate.id:userId,
     id: Date.now(),
     title: toBeUpdate ? toBeUpdate.title : "",
@@ -36,7 +38,7 @@ function PostForm() {
     pictureName: toBeUpdate ? toBeUpdate.pictureName : "",
   });
   // const newId = Date.now();
-  // console.log(postData);
+  console.log(postData);
 
   useEffect(() => {
     if (updatedPostId) {
@@ -60,7 +62,6 @@ function PostForm() {
         picture: file,
         pictureName: file.name,
       }));
-
       // Create a preview URL for the image
       const reader = new FileReader(); //This line creates a new FileReader object. The FileReader is a built-in JavaScript API that allows web applications to asynchronously read the contents of files (or raw data buffers) stored on the user's computer.
       reader.onloadend = () => {
@@ -71,8 +72,11 @@ function PostForm() {
     } else {
       setPostData((prev) => ({
         ...prev,
+        username:userName,
         [name]: value,
       }));
+console.log(postData)
+
     }
   };
   console.log(postData.id);
@@ -89,6 +93,7 @@ function PostForm() {
         const pictureData = reader.result;
         // Here, we're sending serializable data to Redux
         const serializablePostData = {
+          username:postData.username,
           uId:postData.uId,
           id: postData.id,
           title: postData.title,

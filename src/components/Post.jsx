@@ -15,6 +15,10 @@ function Post({post}) {
               />
             )}
             <div className="p-4">
+              <span className='text-xs flex justify-end pb-2'>Posted by
+                 <p className='text-blue-500 pl-1 font-medium capitalize'>{" "}{post.username}</p>
+
+              </span>
             <h2 className="text-md font-bold truncates capitalize text-slate-600">{post.title}</h2>
             <p className='text-xs font-medium text-cyan-600' >{post.content.split(" ").slice(0,13).join(" ")+".."}</p>
             </div>

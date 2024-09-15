@@ -9,7 +9,7 @@ function Feed() {
 
   return (
 
-    <div className=' mt-24 mx-3 min-h-screen'>
+    <div className=' mt-24 mb-10 mx-3 min-h-screen'>
         <h1 className='text-center text-3xl font-bold mt-10'>Feed</h1>
         <div className='border-b-[3px] border-b-orange-900 w-14 mx-auto mb-10'></div>
       <div className="flex flex-wrap gap-5 justify-center max-w-6xl w-full mx-auto">

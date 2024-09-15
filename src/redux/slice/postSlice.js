@@ -12,10 +12,10 @@ export const postSlice = createSlice({
     initialState,
     reducers:{
         addPost:(state,action)=>{
-            const {uId,id, title, content, pictureName, pictureData } = action.payload.postData;
+            const {username,uId,id, title, content, pictureName, pictureData } = action.payload.postData;
 
             // console.log(uId)
-            state.posts.push({uId, id,title, content, pictureName, pictureData })
+            state.posts.push({username,uId, id,title, content, pictureName, pictureData })
 
             // state.userId=action.payload.Uid
             try {
